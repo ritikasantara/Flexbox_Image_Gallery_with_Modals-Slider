@@ -3,7 +3,7 @@
 
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web'
-@import 'https://fonts.googleapis.com/css?family=Bungee+Inline'
+@import 'https://fonts.googleapis.com/css?family=Cinzel'
 @import 'https://fonts.googleapis.com/css?family=Open+Sans'
 @import 'https://fonts.googleapis.com/css?family=Robot'
 @import 'https://fonts.googleapis.com/css?family=Dorsa'
@@ -28,24 +28,46 @@ a
 main 
 
     width: 70vw
-    height: 200vh
+    height: 205vh
     +display(block)
     margin: 0 auto
-    background: #eee    
+    background: darken(#fffff0, 5%) 
+    position: relative 
+    box-shadow: 2px 2px 2px 0px #eee  
 
 
     header
 
-   
+        margin-top: 20px
+        position: absolute
+        top: 30px
+        width: 100%
 
         p
 
-            padding: 5%
-            text-align: center
+            position: relative
+            margin-left: -13px
+            text-indent: 50px
+            text-transform: uppercase
+            padding: 2%
             background: steelblue
             color: #fff
-            font-size: 1.5em
-            box-shadow: 1px 1px 2px #333
+            font-size: 1.8em
+            font-family: 'Cinzel', serif
+            border-top-left-radius: 3px
+            box-shadow: 2px 2px 6px 0px #696969
+
+
+            &:after
+
+                content: ""
+                position: absolute
+                width: 0
+                height: 0
+                left: 0
+                top: 100%
+                border-right: 2vh solid lighten(steelblue, 20%)
+                border-bottom: 2vh solid transparent
 
 
 
@@ -91,7 +113,9 @@ main
     .gallery-container 
 
         width: 760px
-        margin: 0 auto
+        margin: 5px auto
+        padding-top: 160px
+    
 
 
         img
@@ -111,64 +135,69 @@ main
 /* Gallery Modal */
 
 
-    .modal
+.modal
 
-        display: none
-        transition: all 200ms ease-out
+    display: none
+    transition: all 200ms ease-out
 
-        &:target
+    &:target
 
-            display: block
-            background: rgba(0,0,0,0.8)
-            position: fixed
-            top: 0
-            left: 0
-            width: 100%
-            height: 100%
-            z-index: 200
+        display: block
+        background: rgba(0,0,0,0.8)
+        position: fixed
+        top: 0
+        left: 0
+        width: 100%
+        height: 100%
+        z-index: 200
       
 
 
-        #close
+    #close
 
-            color: #696969
+        color: #696969
+        font-size: 40px
+        position: absolute
+        right: 200px
+        top: 30px
+        display: flex
+        justify-content: center
+
+        &:hover
+
+            color: #ccc
+
+    .modal-images
+
+        width: 100%
+        height: 50%
+        margin-top: 12%
+        display: flex
+        justify-content: center
+        align-items: center
+
+        a
+
+            color: #ccc
             font-size: 40px
-            margin-top: 30px
-            display: flex
-            justify-content: center
-
-            &:hover
-
-                color: #ccc
-
-        .modal-images
-
-            width: 100%
-            height: 50%
-            margin-top: 12%
+            text-decoration: none
             display: flex
             justify-content: center
             align-items: center
+            margin: 0 30px
 
-            a
+        a:nth-child(2)
 
-                color: #ccc
-                font-size: 40px
-                text-decoration: none
-                margin: 0 30px
-
-            a:nth-child(2)
-
-                margin: 0
-                height: 100%  
+            margin: 0
+            height: 100%  
           
 
 
-            img
+        img
 
-                width: 300px
-                height: 100%   
-                max-width: 100%
-                border: 7px solid #fff
-                border-radius: 3px
-                box-sizing: border-box
+            width: 330px
+            height: 110%   
+            max-width: 100%
+            border: 7px solid #fff
+            border-radius: 3px
+            box-sizing: border-box
