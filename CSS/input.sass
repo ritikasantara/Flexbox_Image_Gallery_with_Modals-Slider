@@ -11,6 +11,8 @@
 @import variables
 @import mixins
 
+
+
 /* Gallery */
 
 *
@@ -43,6 +45,7 @@ main
         top: 30px
         width: 100%
 
+
         p
 
             position: relative
@@ -56,6 +59,8 @@ main
             font-family: 'Cinzel', serif
             border-top-left-radius: 3px
             box-shadow: 2px 2px 6px 0px #696969
+            text-shadow: 1px 1px darken(steelblue,20%),2px 2px darken(steelblue, 19%),3px 3px darken(steelblue, 18%),4px 4px darken(steelblue, 17%),5px 5px darken(steelblue, 16%),6px 6px darken(steelblue, 15%),7px 7px darken(steelblue, 14%), 8px 8px darken(steelblue, 13%),9px 9px darken(steelblue, 12%)
+
 
 
             &:after
@@ -201,3 +206,67 @@ main
             border: 7px solid #fff
             border-radius: 3px
             box-sizing: border-box
+
+
+/* Media queries */
+
+@media screen and (max-width: 1085px) and (min-width: 960px)
+
+    main 
+
+        width: 80vw
+
+@media screen and (max-width: 959px) and (min-width: 880px)
+
+    main 
+
+        width: 85vw 
+        height: 205vh
+        +display(block)
+        margin: 0 auto
+        background: darken(#fffff0, 5%) 
+        position: relative 
+        box-shadow: none    
+
+@media screen and (max-width: 881px)
+
+
+    body
+
+        background: darken(#fffff0, 5%)
+
+        main 
+
+            max-width: 100%
+            height: 205vh
+            +display(block)
+            margin: 0 auto
+            background: darken(#fffff0, 5%) 
+            position: relative 
+            box-shadow: none 
+    
+
+            header
+
+                max-width: 100%
+                position: relative
+                left: 0
+                
+
+                p 
+
+                    max-width: 100%
+                    font-size: 1.8em
+                    +display(block)
+                    text-align: center
+                    margin-left: 0
+
+                    &:after
+
+                        content: ""
+                        border-right: none
+
+            .gallery-container
+
+                width: 100% 
+                margin: 0 auto            
