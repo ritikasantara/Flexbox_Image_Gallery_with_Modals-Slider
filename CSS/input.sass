@@ -1,7 +1,6 @@
 
 /* Imports */
 
-@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
 @import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web'
 @import 'https://fonts.googleapis.com/css?family=Cinzel'
@@ -34,9 +33,12 @@ main
     height: 205vh
     +display(block)
     margin: 0 auto
-    background: darken(#fffff0, 5%) 
+    background: darken($light-yellow, 5%) 
     position: relative 
     box-shadow: 2px 2px 2px 0px #eee  
+
+
+/* Ribbon style header */
 
 
     header
@@ -54,13 +56,13 @@ main
             text-indent: 50px
             text-transform: uppercase
             padding: 2%
-            background: steelblue
+            background: $blue-color
             color: #fff
             font-size: 1.8em
             font-family: 'Cinzel', serif
             border-top-left-radius: 3px
-            box-shadow: 2px 2px 6px 0px #696969
-            text-shadow: 1px 1px darken(steelblue,20%),2px 2px darken(steelblue, 19%),3px 3px darken(steelblue, 18%),4px 4px darken(steelblue, 17%),5px 5px darken(steelblue, 16%),6px 6px darken(steelblue, 15%),7px 7px darken(steelblue, 14%), 8px 8px darken(steelblue, 13%),9px 9px darken(steelblue, 12%)
+            box-shadow: 2px 2px 6px 0px $grey
+            text-shadow: 1px 1px darken($blue-color,20%),2px 2px darken($blue-color, 19%),3px 3px darken($blue-color, 18%),4px 4px darken($blue-color, 17%),5px 5px darken(steelblue, 16%),6px 6px darken($blue-color, 15%),7px 7px darken($blue-color, 14%), 8px 8px darken($blue-color, 13%),9px 9px darken($blue-color, 12%)
 
 
 
@@ -72,48 +74,8 @@ main
                 height: 0
                 left: 0
                 top: 100%
-                border-right: 2vh solid lighten(steelblue, 20%)
+                border-right: 2vh solid lighten($blue-color, 20%)
                 border-bottom: 2vh solid transparent
-
-
-
-
-    .small
-
-        +small-dimensions(250px,200px)
-        overflow: hidden
-        padding: 15px
-        transition: all 100ms ease-out
-        
-
-    .small-modal
-
-
-        width: 350px
-        height: 300px
-        overflow: hidden
-        padding: 0
-    
-
-
-
-
-    .normal
-
-    
-        +normal-dimensions(500px,400px)
-        overflow: hidden
-        padding: 15px
-    
-
-
-    .large
-
-
-        +large-dimensions(250px,400px)
-        overflow: hidden
-        padding: 15px
-    
 
 
     .gallery-container 
@@ -121,20 +83,114 @@ main
         width: 760px
         margin: 5px auto
         padding-top: 160px
-    
 
-
-        img
-
-            display: inline-block
-            width: 100%
-            height: 100%
-            box-shadow: 0 0 0 6px #fff,0 4px 15px 5px rgba(0, 0, 0, 0.5)  
 
         .section
 
-            display: flex 
+            +display(flex) 
             position: relative
+    
+
+
+            img
+
+                display: inline-block
+                width: 100%
+                height: 100%
+                box-shadow: 0 0 0 6px $white,0 4px 15px 5px rgba(0, 0, 0, 0.5) 
+
+ 
+
+
+            .small
+
+                +small-dimensions(250px,200px)
+                overflow: hidden
+                padding: 15px
+                transition: all 100ms ease-out
+                position: relative
+
+                .image-overlay
+
+                    width: calc(100% - 30px)
+                    height: calc(30% - 15px)
+                    background: rgba(0,0,0,0.6)
+                    position: absolute
+                    left: 15px
+                    bottom: 15px
+
+                    p 
+
+                        text-align: center
+                        font-size: 12px
+                        color: $white
+                        line-height: 39px
+                        font-style: italic
+                        font-family: 'Open sans', sans-serif
+                
+
+
+            .normal
+
+            
+                +normal-dimensions(500px,400px)
+                overflow: hidden
+                padding: 15px
+                position: relative
+
+
+                .image-overlay
+
+                    width: calc(100% - 30px)
+                    height: calc(15% - 15px)
+                    background: rgba(0,0,0,0.6)
+                    position: absolute
+                    left: 15px
+                    bottom: 15px
+
+                    p 
+
+                        text-align: center
+                        font-size: 12px
+                        color: $white
+                        line-height: 39px
+                        font-style: italic
+                        font-family: 'Open sans', sans-serif
+            
+
+
+            .large
+
+
+                +large-dimensions(250px,400px)
+                overflow: hidden
+                padding: 15px
+                position: relative
+
+
+                .image-overlay
+
+                    width: calc(100% - 30px)
+                    height: calc(15% - 15px)
+                    background: rgba(0,0,0,0.6)
+                    position: absolute
+                    left: 15px
+                    bottom: 15px
+
+                    p 
+
+                        text-align: center
+                        font-size: 12px
+                        color: $white
+                        line-height: 45px
+                        font-style: italic
+                        font-family: 'Open sans', sans-serif
+            
+
+
+
+
+
 
 
 
@@ -161,36 +217,50 @@ main
 
     #close
 
-        color: #696969
+        color: $grey
         font-size: 40px
-        position: absolute
-        right: 200px
-        top: 30px
-        display: flex
-        justify-content: center
+        position: relative
+        left: 0
+        top: 95px
+        +display(flex)
+        +flex-direction(column)
+        +justify-content(center)
+        +align-items(center)
+        z-index: 200 
+
+      
 
         &:hover
 
-            color: #ccc
+            color: $light-grey
 
     .modal-images
 
         width: 100%
         height: 50%
-        margin-top: 12%
-        display: flex
-        justify-content: center
-        align-items: center
+        margin-top: 14%
+        +display(flex)
+        +justify-content(center)
+        +align-items(center)
 
         a
 
-            color: #ccc
+            color: $light-grey
             font-size: 40px
             text-decoration: none
-            display: flex
-            justify-content: center
-            align-items: center
+            +display(flex)
+            +justify-content(center)
+            +align-items(center)
             margin: 0 30px
+            transition: all 1s ease-in-out
+
+            .chevron-right:hover
+
+                color: fade-in($grey, 0.8)
+
+            .chevron-left:hover
+
+                color: fade-in($grey, 0.8)
 
         a:nth-child(2)
 
@@ -201,73 +271,97 @@ main
 
         img
 
-            width: 330px
-            height: 110%   
+            width: 390px
+            height: 135%   
             max-width: 100%
-            border: 7px solid #fff
+            border: 7px solid $white
             border-radius: 3px
             box-sizing: border-box
 
 
 /* Media queries */
 
-@media screen and (max-width: 1085px) and (min-width: 960px)
 
-    main 
-
-        width: 80vw
-
-@media screen and (max-width: 959px) and (min-width: 880px)
+@media screen and (max-width: 1085px)
 
     main 
 
         width: 85vw 
-        height: 205vh
-        +display(block)
-        margin: 0 auto
-        background: darken(#fffff0, 5%) 
+        background: darken($light-yellow, 5%) 
         position: relative 
-        box-shadow: none    
+         
 
 @media screen and (max-width: 881px)
 
 
     body
 
-        background: darken(#fffff0, 5%)
+        background: #eee
 
         main 
 
-            max-width: 100%
-            height: 205vh
-            +display(block)
+            width: 80vw
+            min-height: 450vh
             margin: 0 auto
-            background: darken(#fffff0, 5%) 
+            background: darken($light-yellow, 5%) 
             position: relative 
-            box-shadow: none 
-    
-
-            header
-
-                max-width: 100%
-                position: relative
-                left: 0
-                
-
-                p 
-
-                    max-width: 100%
-                    font-size: 1.8em
-                    +display(block)
-                    text-align: center
-                    margin-left: 0
-
-                    &:after
-
-                        content: ""
-                        border-right: none
 
             .gallery-container
 
-                width: 100% 
-                margin: 0 auto            
+                width: 100%
+                
+
+
+                .section
+
+                    +display(flex)
+                    +flex-direction(column)
+                    +justify-content(center)
+                    +align-items(center)
+                    
+
+                .small,.normal,.large
+
+                    width: 100%
+                    height: 100%
+
+
+    
+@media screen and (max-width: 660px)
+
+    main 
+
+        min-width: 100vw
+
+        p 
+
+            font-size: 0.8em
+            text-indent: 30px
+
+
+
+
+
+@media screen and (max-width: 501px)
+
+
+
+    main
+
+        min-width: 501px
+
+        .small,.normal,.large
+
+            min-width: 100%
+
+
+ 
+
+            
+
+      
+        
+
+                
+
+                    
