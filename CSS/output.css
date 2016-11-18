@@ -1,6 +1,5 @@
 /* Imports */
 @import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css';
-@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css';
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web';
 @import 'https://fonts.googleapis.com/css?family=Cinzel';
 @import 'https://fonts.googleapis.com/css?family=Open+Sans';
@@ -27,117 +26,119 @@ main {
   background: #ffffd7;
   position: relative;
   box-shadow: 2px 2px 2px 0px #eee; }
-  main header {
-    margin-top: 20px;
-    position: absolute;
-    top: 30px;
-    width: 100%; }
-    main header p {
-      position: relative;
-      margin-left: -13px;
-      text-indent: 50px;
-      text-transform: uppercase;
-      padding: 2%;
-      background: #4682b4;
-      color: #fff;
-      font-size: 1.8em;
-      font-family: "Cinzel", serif;
-      border-top-left-radius: 3px;
-      box-shadow: 2px 2px 6px 0px #696969;
-      text-shadow: 1px 1px #294d6b, 2px 2px #2b506e, 3px 3px #2c5272, 4px 4px #2e5576, 5px 5px #2f5879, 6px 6px #315a7d, 7px 7px #325d81, 8px 8px #336084, 9px 9px #356288; }
-      main header p:after {
-        content: "";
-        position: absolute;
-        width: 0;
-        height: 0;
-        left: 0;
-        top: 100%;
-        border-right: 2vh solid #8db3d3;
-        border-bottom: 2vh solid transparent; }
-  main .gallery-container {
-    width: 760px;
-    margin: 5px auto;
-    padding-top: 160px; }
-    main .gallery-container .section {
-      display: -webkit-box;
-      display: -moz-box;
-      display: box;
-      display: -webkit-flex;
-      display: -moz-flex;
-      display: -ms-flexbox;
-      display: flex;
+
+/* Ribbon style header */
+header {
+  margin-top: 20px;
+  position: absolute;
+  top: 30px;
+  width: 100%; }
+  header p {
+    position: relative;
+    margin-left: -13px;
+    text-indent: 50px;
+    text-transform: uppercase;
+    padding: 2%;
+    background: #4682b4;
+    color: #fff;
+    font-size: 1.8em;
+    font-family: "Cinzel", serif;
+    border-top-left-radius: 3px;
+    box-shadow: 2px 2px 6px 0px #696969;
+    text-shadow: 1px 1px #294d6b, 2px 2px #2b506e, 3px 3px #2c5272, 4px 4px #2e5576, 5px 5px #2f5879, 6px 6px #315a7d, 7px 7px #325d81, 8px 8px #336084, 9px 9px #356288; }
+    header p::after {
+      content: "";
+      position: absolute;
+      width: 0;
+      height: 0;
+      left: 0;
+      top: 100%;
+      border-right: 2vh solid #8db3d3;
+      border-bottom: 2vh solid transparent; }
+
+.gallery-container {
+  width: 760px;
+  margin: 5px auto;
+  padding-top: 160px; }
+  .gallery-container .section {
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+    display: -webkit-flex;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative; }
+    .gallery-container .section img {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+      box-shadow: 0 0 0 6px #fff, 0 4px 15px 5px rgba(0, 0, 0, 0.5); }
+    .gallery-container .section .small {
+      width: 250px;
+      height: 200px;
+      overflow: hidden;
+      padding: 15px;
       position: relative; }
-      main .gallery-container .section img {
-        display: inline-block;
-        width: 100%;
-        height: 100%;
-        box-shadow: 0 0 0 6px #fff, 0 4px 15px 5px rgba(0, 0, 0, 0.5); }
-      main .gallery-container .section .small {
-        width: 250px;
-        height: 200px;
-        overflow: hidden;
-        padding: 15px;
-        transition: all 100ms ease-out;
-        position: relative; }
-        main .gallery-container .section .small .image-overlay {
-          width: calc(100% - 30px);
-          height: calc(30% - 15px);
-          background: rgba(0, 0, 0, 0.6);
-          position: absolute;
-          left: 15px;
-          bottom: 15px; }
-          main .gallery-container .section .small .image-overlay p {
-            text-align: center;
-            font-size: 12px;
-            color: #fff;
-            line-height: 39px;
-            font-style: italic;
-            font-family: "Open sans", sans-serif; }
-      main .gallery-container .section .normal {
-        width: 500px;
-        height: 400px;
-        overflow: hidden;
-        padding: 15px;
-        position: relative; }
-        main .gallery-container .section .normal .image-overlay {
-          width: calc(100% - 30px);
-          height: calc(15% - 15px);
-          background: rgba(0, 0, 0, 0.6);
-          position: absolute;
-          left: 15px;
-          bottom: 15px; }
-          main .gallery-container .section .normal .image-overlay p {
-            text-align: center;
-            font-size: 12px;
-            color: #fff;
-            line-height: 39px;
-            font-style: italic;
-            font-family: "Open sans", sans-serif; }
-      main .gallery-container .section .large {
-        width: 250px;
-        height: 400px;
-        overflow: hidden;
-        padding: 15px;
-        position: relative; }
-        main .gallery-container .section .large .image-overlay {
-          width: calc(100% - 30px);
-          height: calc(15% - 15px);
-          background: rgba(0, 0, 0, 0.6);
-          position: absolute;
-          left: 15px;
-          bottom: 15px; }
-          main .gallery-container .section .large .image-overlay p {
-            text-align: center;
-            font-size: 12px;
-            color: #fff;
-            line-height: 45px;
-            font-style: italic;
-            font-family: "Open sans", sans-serif; }
+      .gallery-container .section .small .image-overlay {
+        width: calc(100% - 30px);
+        height: calc(30% - 15px);
+        background: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        left: 15px;
+        bottom: 15px; }
+        .gallery-container .section .small .image-overlay p {
+          text-align: center;
+          font-size: 12px;
+          color: #fff;
+          line-height: 39px;
+          font-style: italic;
+          font-family: "Open sans", sans-serif; }
+    .gallery-container .section .normal {
+      width: 500px;
+      height: 400px;
+      overflow: hidden;
+      padding: 15px;
+      position: relative; }
+      .gallery-container .section .normal .image-overlay {
+        width: calc(100% - 30px);
+        height: calc(15% - 15px);
+        background: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        left: 15px;
+        bottom: 15px; }
+        .gallery-container .section .normal .image-overlay p {
+          text-align: center;
+          font-size: 12px;
+          color: #fff;
+          line-height: 39px;
+          font-style: italic;
+          font-family: "Open sans", sans-serif; }
+    .gallery-container .section .large {
+      width: 250px;
+      height: 400px;
+      overflow: hidden;
+      padding: 15px;
+      position: relative; }
+      .gallery-container .section .large .image-overlay {
+        width: calc(100% - 30px);
+        height: calc(15% - 15px);
+        background: rgba(0, 0, 0, 0.6);
+        position: absolute;
+        left: 15px;
+        bottom: 15px; }
+        .gallery-container .section .large .image-overlay p {
+          text-align: center;
+          font-size: 12px;
+          color: #fff;
+          line-height: 45px;
+          font-style: italic;
+          font-family: "Open sans", sans-serif; }
 
 /* Gallery Modal */
 .modal {
   display: none;
-  transition: all 200ms ease-out; }
+  transition: #close 200ms ease-out; }
   .modal:target {
     display: block;
     background: rgba(0, 0, 0, 0.8);
@@ -250,7 +251,7 @@ main {
       align-items: center;
       -ms-flex-align: center;
       margin: 0 30px;
-      transition: all 1s ease-in-out; }
+      transition: all 1s ease-out; }
       .modal .modal-images a .chevron-right:hover {
         color: dimgray; }
       .modal .modal-images a .chevron-left:hover {
@@ -277,7 +278,7 @@ main {
     background: #eee; }
     body main {
       width: 80vw;
-      min-height: 450vh;
+      min-height: 510vh;
       margin: 0 auto;
       background: #ffffd7;
       position: relative; }
@@ -325,9 +326,10 @@ main {
 @media screen and (max-width: 660px) {
   main {
     min-width: 100vw; }
-    main p {
-      font-size: 0.8em;
-      text-indent: 30px; } }
+
+  header p {
+    font-size: 1.8em;
+    text-indent: 30px; } }
 @media screen and (max-width: 501px) {
   main {
     min-width: 501px; }

@@ -1,7 +1,7 @@
 
 /* Imports */
 
-@import 'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'
+@import 'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
 @import 'https://fonts.googleapis.com/css?family=Titillium+Web'
 @import 'https://fonts.googleapis.com/css?family=Cinzel'
 @import 'https://fonts.googleapis.com/css?family=Open+Sans'
@@ -41,150 +41,149 @@ main
 /* Ribbon style header */
 
 
-    header
+header
 
-        margin-top: 20px
-        position: absolute
-        top: 30px
-        width: 100%
+    margin-top: 20px
+    position: absolute
+    top: 30px
+    width: 100%
 
 
-        p
+    p
 
+        position: relative
+        margin-left: -13px
+        text-indent: 50px
+        text-transform: uppercase
+        padding: 2%
+        background: $blue-color
+        color: #fff
+        font-size: 1.8em
+        font-family: 'Cinzel', serif
+        border-top-left-radius: 3px
+        box-shadow: 2px 2px 6px 0px $grey
+        text-shadow: 1px 1px darken($blue-color,20%),2px 2px darken($blue-color, 19%),3px 3px darken($blue-color, 18%),4px 4px darken($blue-color, 17%),5px 5px darken(steelblue, 16%),6px 6px darken($blue-color, 15%),7px 7px darken($blue-color, 14%), 8px 8px darken($blue-color, 13%),9px 9px darken($blue-color, 12%)
+
+
+
+        &::after
+
+            content: ""
+            position: absolute
+            width: 0
+            height: 0
+            left: 0
+            top: 100%
+            border-right: 2vh solid lighten($blue-color, 20%)
+            border-bottom: 2vh solid transparent
+
+
+.gallery-container 
+
+    width: 760px
+    margin: 5px auto
+    padding-top: 160px
+
+
+    .section
+
+        +display(flex) 
+        position: relative
+
+
+
+        img
+
+            display: inline-block
+            width: 100%
+            height: 100%
+            box-shadow: 0 0 0 6px $white,0 4px 15px 5px rgba(0, 0, 0, 0.5) 
+
+
+
+
+        .small
+
+            +small-dimensions(250px,200px)
+            overflow: hidden
+            padding: 15px
             position: relative
-            margin-left: -13px
-            text-indent: 50px
-            text-transform: uppercase
-            padding: 2%
-            background: $blue-color
-            color: #fff
-            font-size: 1.8em
-            font-family: 'Cinzel', serif
-            border-top-left-radius: 3px
-            box-shadow: 2px 2px 6px 0px $grey
-            text-shadow: 1px 1px darken($blue-color,20%),2px 2px darken($blue-color, 19%),3px 3px darken($blue-color, 18%),4px 4px darken($blue-color, 17%),5px 5px darken(steelblue, 16%),6px 6px darken($blue-color, 15%),7px 7px darken($blue-color, 14%), 8px 8px darken($blue-color, 13%),9px 9px darken($blue-color, 12%)
 
+            .image-overlay
 
-
-            &::after
-
-                content: ""
+                width: calc(100% - 30px)
+                height: calc(30% - 15px)
+                background: rgba(0,0,0,0.6)
                 position: absolute
-                width: 0
-                height: 0
-                left: 0
-                top: 100%
-                border-right: 2vh solid lighten($blue-color, 20%)
-                border-bottom: 2vh solid transparent
+                left: 15px
+                bottom: 15px
+
+                p 
+
+                    text-align: center
+                    font-size: 12px
+                    color: $white
+                    line-height: 39px
+                    font-style: italic
+                    font-family: 'Open sans', sans-serif
+            
 
 
-    .gallery-container 
+        .normal
 
-        width: 760px
-        margin: 5px auto
-        padding-top: 160px
-
-
-        .section
-
-            +display(flex) 
+        
+            +normal-dimensions(500px,400px)
+            overflow: hidden
+            padding: 15px
             position: relative
-    
 
 
-            img
+            .image-overlay
 
-                display: inline-block
-                width: 100%
-                height: 100%
-                box-shadow: 0 0 0 6px $white,0 4px 15px 5px rgba(0, 0, 0, 0.5) 
+                width: calc(100% - 30px)
+                height: calc(15% - 15px)
+                background: rgba(0,0,0,0.6)
+                position: absolute
+                left: 15px
+                bottom: 15px
 
- 
+                p 
 
-
-            .small
-
-                +small-dimensions(250px,200px)
-                overflow: hidden
-                padding: 15px
-                transition: all 100ms ease-out
-                position: relative
-
-                .image-overlay
-
-                    width: calc(100% - 30px)
-                    height: calc(30% - 15px)
-                    background: rgba(0,0,0,0.6)
-                    position: absolute
-                    left: 15px
-                    bottom: 15px
-
-                    p 
-
-                        text-align: center
-                        font-size: 12px
-                        color: $white
-                        line-height: 39px
-                        font-style: italic
-                        font-family: 'Open sans', sans-serif
-                
+                    text-align: center
+                    font-size: 12px
+                    color: $white
+                    line-height: 39px
+                    font-style: italic
+                    font-family: 'Open sans', sans-serif
+        
 
 
-            .normal
-
-            
-                +normal-dimensions(500px,400px)
-                overflow: hidden
-                padding: 15px
-                position: relative
+        .large
 
 
-                .image-overlay
-
-                    width: calc(100% - 30px)
-                    height: calc(15% - 15px)
-                    background: rgba(0,0,0,0.6)
-                    position: absolute
-                    left: 15px
-                    bottom: 15px
-
-                    p 
-
-                        text-align: center
-                        font-size: 12px
-                        color: $white
-                        line-height: 39px
-                        font-style: italic
-                        font-family: 'Open sans', sans-serif
-            
+            +large-dimensions(250px,400px)
+            overflow: hidden
+            padding: 15px
+            position: relative
 
 
-            .large
+            .image-overlay
 
+                width: calc(100% - 30px)
+                height: calc(15% - 15px)
+                background: rgba(0,0,0,0.6)
+                position: absolute
+                left: 15px
+                bottom: 15px
 
-                +large-dimensions(250px,400px)
-                overflow: hidden
-                padding: 15px
-                position: relative
+                p 
 
-
-                .image-overlay
-
-                    width: calc(100% - 30px)
-                    height: calc(15% - 15px)
-                    background: rgba(0,0,0,0.6)
-                    position: absolute
-                    left: 15px
-                    bottom: 15px
-
-                    p 
-
-                        text-align: center
-                        font-size: 12px
-                        color: $white
-                        line-height: 45px
-                        font-style: italic
-                        font-family: 'Open sans', sans-serif
+                    text-align: center
+                    font-size: 12px
+                    color: $white
+                    line-height: 45px
+                    font-style: italic
+                    font-family: 'Open sans', sans-serif
             
 
 
@@ -200,7 +199,7 @@ main
 .modal
 
     display: none
-    transition: all 200ms ease-out
+    transition: #close 200ms ease-out
 
     &:target
 
@@ -252,7 +251,7 @@ main
             +justify-content(center)
             +align-items(center)
             margin: 0 30px
-            transition: all 1s ease-in-out
+            transition: all 1s ease-out
 
             .chevron-right:hover
 
@@ -301,7 +300,7 @@ main
         main 
 
             width: 80vw
-            min-height: 450vh
+            min-height: 510vh
             margin: 0 auto
             background: darken($light-yellow, 5%) 
             position: relative 
@@ -332,10 +331,13 @@ main
     main 
 
         min-width: 100vw
+        
+
+    header
 
         p 
 
-            font-size: 0.8em
+            font-size: 1.8em
             text-indent: 30px
 
 
